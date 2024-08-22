@@ -1,3 +1,7 @@
+using Bookland.Database;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,6 +16,11 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+builder.Services.AddDbContext<AppDbContext>(Options => 
+Options.UseMySql(builder.Configuration.GetConnectionString("ConnectionDBbookland"),
+ServerVersion.Parse("8.0.20-mysql"))
+);
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
