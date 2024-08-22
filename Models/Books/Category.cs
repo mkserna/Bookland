@@ -9,5 +9,8 @@ namespace Bookland.Models.Books
     {
          public int Id { get; set; }
         public string CategoryName { get; set; }
+
+        // Propiedad de navegación: una categoría puede tener varios libros
+        public ICollection<Book> Books { get; set; }
     }
 }
