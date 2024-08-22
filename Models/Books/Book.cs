@@ -11,12 +11,12 @@ namespace Bookland.Models.Books
         public string Title { get; set; }
         public string ISBN { get; set; }
         public bool Availability { get; set; }
+        public int AuthorId { get; set; }
+        public int CategoryId { get; set; }
+        
 
         // Relaciones con las otras entidades
-        public int AuthorId { get; set; }
         public Author Author { get; set; }
-
-        public int CategoryId { get; set; }
         public Category Category { get; set; }
     }
 }

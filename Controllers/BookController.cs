@@ -55,24 +55,25 @@ public class BookController : Controller
     // here showing The form of the book
     public IActionResult CreateUpdateForm(Book model)
     {
-        if (model.Id==0)
+        if (model.Id == 0)
         {
-            
+            _context.Books.Add(model);
         }
         else
         {
-
+            _context.Books.Update(model);
         }
         try
         {
-
+            _context.SaveChanges();
         }
-        catch
+        catch (Exception ex)
         {
-
+            Console.WriteLine(ex.InnerException?.Message);
+            return View(model);
         }
-        return View();
- }
+        return View(); //adentro va la vista de los todos los libros.
+    }
 
 
 }
