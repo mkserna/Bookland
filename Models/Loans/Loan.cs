@@ -12,8 +12,16 @@ namespace Bookland.Models.Loans
         public int Id { get; set; }
         public DateOnly LoanDate { get; set; }
         public DateOnly ExpectedReturnDate { get; set; }
+
+        // Claves Foraneas
+        public int UserId {get; set;}
+        public int BookId {get; set;}
+
+
+        // Relaciones con otras entidades
         public User User { get; set; }
         public Book Book { get; set; }
+        public ICollection<LoanHistory> loanHistory {get; set;}
 
     }
 }
