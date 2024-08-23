@@ -24,9 +24,9 @@ public class BookController : Controller
 
     //calling the view of the books 
 
-    public async Task<IActionResult> books()
+    public IActionResult books()
     {
-        var allBooks = await _context.Books.ToListAsync();
+        var allBooks =  _context.Books.ToList();
         return View(allBooks);
     }
 
