@@ -2,4 +2,54 @@
     ViewData["Title"] = "Register";
 }
 
-<p>holaaaaa</p>
+<div class="container px-4 pt-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 pb-5 mb-5">
+        <div class="col-lg-6">
+            <div class="form-signin m-auto w-100">
+                <form class="g-5">
+                    <h1 class="h3 mb-3 fw-normal text-primary display-6">Register</h1>
+                    <div class="form-floating my-3">
+                        <input type="text" class="form-control" id="nameUser" placeholder="Juan">
+                        <label for="floatingInput" class="lead">Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="lastNameUser" placeholder="Perez">
+                        <label for="floatingInput" class="lead">Last Name</label>
+                    </div>
+                    <div class="form-floating my-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Identification">
+                        <label for="floatingInput" class="lead">Type Identification</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="floatingInput" placeholder="000-000-000">
+                        <label for="floatingInput" class="lead">Number Identification</label>
+                    </div>
+                    <div class="form-floating my-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="California">
+                        <label for="floatingInput" class="lead">Home address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="floatingInput" placeholder="123456789">
+                        <label for="floatingInput" class="lead">Phone number</label>
+                    </div>
+                    <div class="form-floating my-3">
+                        <input type="email" class="form-control" id="emailUser" placeholder="name@example.com">
+                        <label for="floatingInput" class="lead">Email address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="passwordUser" placeholder="Password">
+                        <label for="floatingPassword" class="lead">Password</label>
+                    </div>
+                    <div class="text-start my-3">
+                        <label class="lead">Do you have an account?</label>
+                        <a asp-area="" asp-controller="Auth" asp-action="Login" class="lead link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Log in</a>
+                    </div>
+                    <button class="btn btn-primary w-50 py-2  lead" type="submit" >Create Account</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="../assets/img/6607.jpg" class="d-block mx-lg-auto img-fluid" alt="Hero Bookland" display-6>
+        </div>
+    </div>
+</div>
