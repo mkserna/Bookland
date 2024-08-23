@@ -8,8 +8,6 @@ namespace Bookland.Models.Users
     public class Role
     {
         public int Id { get; set; }
-        public string Rol { get; set; }
-
-        
+        public string RoleName { get; set; }
     }
 }
