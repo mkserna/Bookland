@@ -29,6 +29,21 @@ namespace Bookland.Database
         public AppDbContext(DbContextOptions options) : base(options)
         {
         }
-        
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Configuración de la relación entre Book y Author
+            modelBuilder.Entity<Book>()
+                .HasOne(b => b.Author)
+                .WithMany(a => a.Books)
+                .HasForeignKey(b => b.AuthorId);
+
+            // Configuración de la relación entre Book y Category
+            modelBuilder.Entity<Book>()
+                .HasOne(b => b.Category)
+                .WithMany(c => c.Books)
+                .HasForeignKey(b => b.CategoryId);
+        }
+
     }
 }
