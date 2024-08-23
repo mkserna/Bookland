@@ -12,5 +12,6 @@ namespace Bookland.Models.Users
 
         // Relaciones con las otras entidades
         public ICollection<User> Users {get; set;}
+
     }
 }

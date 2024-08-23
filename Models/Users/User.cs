@@ -15,7 +15,6 @@ namespace Bookland.Models.Users
         public string Address { get; set; }
         public string ContactNumber { get; set; }
 
-
         public string Email { get; set; }
         public string Password { get; set; }
 
@@ -27,6 +26,7 @@ namespace Bookland.Models.Users
         
         // Relaciones con las otras entidades
         public DocumentType DocumentType { get; set; }
+
         public Role Role { get; set; }
         public ICollection<Loan> Loans {get; set;}
     }
