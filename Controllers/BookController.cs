@@ -24,9 +24,9 @@ public class BookController : Controller
 
     //calling the view of the books 
 
-    public async Task<IActionResult> books()
+    public IActionResult books()
     {
-        var allBooks = await _context.Books.ToListAsync();
+        var allBooks =  _context.Books.ToList();
         return View(allBooks);
     }
 
@@ -36,9 +36,10 @@ public class BookController : Controller
         var BookInDb = _context.Books.SingleOrDefault(b => b.Id == id);
         _context.Books.Remove(BookInDb);
         _context.SaveChanges();
-        return RedirectToAction("aqui va el view ");  // deleting  the view, waitig to get Mariana name of the view
+        return RedirectToAction("Books");  // deleting  the view, waitig to get Mariana name of the view
 
     }
+
 
     // here I am finding it Updating that Book
     public IActionResult UpdateBook(int id)
@@ -49,7 +50,7 @@ public class BookController : Controller
             var BookInDb = _context.Books.SingleOrDefault(b => b.Id == id);
             return View(BookInDb);
         }
-        return View();
+        return RedirectToAction("Books");
     }
 
     // here showing The form of the book

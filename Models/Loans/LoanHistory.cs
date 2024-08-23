@@ -8,8 +8,14 @@ namespace Bookland.Models.Loans
     public class LoanHistory
     {
         public int Id { get; set; }
-        public Loan Loan { get; set; }
         public DateOnly ActualReturnDate { get; set; }
+        
+        // Claves Foraneas
+        public int LoanID {get; set;}
+        
+        
+        // Relaciones con otras entidades
+        public Loan Loan { get; set; }
         
     }
 }

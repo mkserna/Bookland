@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bookland.Models.Loans;
 
 namespace Bookland.Models.Books
 {
@@ -9,6 +10,7 @@ namespace Bookland.Models.Books
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public string Summary { get; set; }
         public string ISBN { get; set; }
         public bool Availability { get; set; }
 
@@ -20,5 +22,6 @@ namespace Bookland.Models.Books
         // Relaciones con las otras entidades
         public Author Author { get; set; }
         public Category Category { get; set; }
+        public ICollection<Loan> Loans { get; set; }
     }
 }
