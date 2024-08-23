@@ -11,8 +11,11 @@ namespace Bookland.Models.Users
         public string DocumentNumber { get; set; }
         public DocumentType DocumentType { get; set; }
         public string Name { get; set; }
+        public string LastName { get; set; }
         public string Address { get; set; }
         public string ContactNumber { get; set; }
+        public string Email { get; set; } // Añadir este campo
+        public string Password { get; set; } // Añadir este campo
         public Role Role { get; set; }
     }
 }
