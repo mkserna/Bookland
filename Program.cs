@@ -11,6 +11,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options => 
     options.UseMySql(builder.Configuration.GetConnectionString("ConnectionDBbookland"),
     ServerVersion.Parse("8.0.20-mysql"))
+//  ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("ConnectionDBbookland"))));
 );
 
 var app = builder.Build();
