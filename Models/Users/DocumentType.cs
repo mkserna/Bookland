@@ -10,5 +10,7 @@ namespace Bookland.Models.Users
         public int Id { get; set; }
         public string Documenttype { get; set; }
         
+
+        public ICollection<User> Users {get; set;}
     }
 }
