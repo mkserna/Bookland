@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container px-4 pt-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 pt-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="../assets/img/6607.jpg" class="d-block mx-lg-auto img-fluid" alt="Hero Bookland" display-6>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-signin m-auto w-50">
+                <form>
+                    <h1 class="h3 mb-3 fw-normal text-primary display-6">Log in</h1>
+                    <p class="lead">Wellcome back, please login into your account.</p>
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput" class="lead">Email address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword" class="lead">Password</label>
+                    </div>
+                    <div class="text-start my-3">
+                        <label class="lead">Don't have an account?</label>
+                        <a  asp-area="" asp-controller="RegisterView" asp-action="Register" class="lead link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Register</a>
+                    </div>
+                    <button class="btn btn-primary w-100 py-2  lead" type="submit" >Sign in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,18 @@
+using Bookland.Database;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Configure DbContext before building the application
+builder.Services.AddDbContext<AppDbContext>(options => 
+    options.UseMySql(builder.Configuration.GetConnectionString("ConnectionDBbookland"),
+    ServerVersion.Parse("8.0.20-mysql"))
+//  ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("ConnectionDBbookland"))));
+);
 
 var app = builder.Build();
 
@@ -25,3 +36,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
